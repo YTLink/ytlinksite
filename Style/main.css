@@ -1,0 +1,249 @@
+/* navbar */
+.navbar-inverse {
+    background-color:white;
+    color:black;
+    border:none;
+    padding-left:22px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color:black;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color:black;
+    text-decoration:underline;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color:#b30000;
+}
+
+.navbar-inverse .navbar-toggle {
+    border:1px solid #b30000;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color:White;
+}
+
+.textContent {
+    vertical-align: center;
+    word-break: break-all;
+}
+
+.textContent.title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.code {
+    font-size: 12px;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    resize: both;
+    height: 100px;
+}
+
+.description {
+    margin-top: 20px;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.legend {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.right {
+    margin-bottom: 30px;
+}
+
+.warning {
+    background-color: #ffcccc;
+    border: 2px solid #b30000;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 3px;
+}
+
+.faqEl {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.faqEl h4 {
+    font-weight: bold;
+}
+
+.menu {
+    margin-bottom: 10px;
+}
+
+.menuBtn {
+    cursor:pointer;
+}
+
+.activeBtn {
+    background-color: #b30000;
+    color:white !important;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+    background-color: #b30000;
+    color:white !important;
+    text-decoration: underline;
+}
+
+.newCode {
+    margin-bottom: 30px;
+}
+
+#faq {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.numberOfCodes {
+    margin-bottom: 20px;
+}
+
+.socialIcons {
+    resize: both;
+    width: 30px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#openingYourVideo {
+    text-align: center;
+    color: white;
+    position: fixed;
+    top: 0px;
+    height: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    z-index: 10000000000;
+}
+
+/*loader*/
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid red;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ads Styling */
+.qc-cmp-button,
+.qc-cmp-button.qc-cmp-secondary-button:hover {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+.qc-cmp-button:hover,
+.qc-cmp-button.qc-cmp-secondary-button {
+    background-color: transparent !important;
+    border-color: #000000 !important;
+}
+
+.qc-cmp-alt-action,
+.qc-cmp-link {
+    color: #000000 !important;
+}
+
+.qc-cmp-button,
+.qc-cmp-button.qc-cmp-secondary-button:hover {
+    color: #ffffff !important;
+}
+
+.qc-cmp-button:hover,
+.qc-cmp-button.qc-cmp-secondary-button {
+    color: #000000 !important;
+}
+
+.qc-cmp-small-toggle,
+.qc-cmp-toggle {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+.qc-cmp-main-messaging,
+.qc-cmp-messaging,
+.qc-cmp-sub-title,
+.qc-cmp-privacy-settings-title,
+.qc-cmp-purpose-list,
+.qc-cmp-tab,
+.qc-cmp-title,
+.qc-cmp-vendor-list,
+.qc-cmp-vendor-list-title,
+.qc-cmp-enabled-cell,
+.qc-cmp-toggle-status,
+.qc-cmp-table,
+.qc-cmp-table-header {
+    color: #000000 !important;
+}
+
+.qc-cmp-ui {
+    background-color: #ffffff !important;
+}
+
+.qc-cmp-table,
+.qc-cmp-table-row {
+    border: 1px solid !important;
+    border-color: #000000 !important;
+}
+
+#qcCmpButtons a {
+    text-decoration: none !important;
+
+}
+
+#qcCmpButtons button {
+    margin-top: 65px;
+}
+
+.qc-cmp-qc-link-container {
+    display: none;
+}

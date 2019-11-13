@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title> YT-Link </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="The goal of YT-Link is for content creators on youtube to have a dedicated link that'll always redirect to their latest video.">
+    <meta name="keywords"
+        content="youtube,singlelink,youtube link,short url,small url,small link,lastvideo,latest video,recent video">
+
+    <!-- Social media tags -->
+    <meta property="og:title" content="YT-Link">
+    <meta property="og:description" content="Unique link to point yo your last video">
+    <meta property="og:image" content="https://yt-link.com/Media/socialLogo.jpg">
+    <meta property="og:url" content="https://yt-link.com/">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./Media/favicon.png">
+
+    <!-- Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47135999-8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-47135999-8');
+    </script>
+
+
+    <!-- local scripts -->
+    <script type="text/javascript" src="./JS/main.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--Footer AD -->
+    <div id="45374-6">
+        <script src="//ads.themoneytizer.com/s/gen.js?type=6"></script>
+        <script src="//ads.themoneytizer.com/s/requestform.js?siteId=45374&formatId=6"></script>
+    </div>
+
+    <!-- AdSense -->
+    <script data-ad-client="ca-pub-1282983709440222" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <!-- remote scripts -->
+    <script src="./JS/jquery.min.js"></script>
+    <script src="./JS/bootstrap.min.js"></script>
+
+    <!-- ads -->
+    <script type="text/javascript" src="./JS/ads.js"></script>
+
+    <!-- local style -->
+    <link rel="stylesheet" type="text/css" href="./Style/main.css">
+
+</head>
+
+<body>
+    <div id="openingYourVideo">
+        <div style="margin:auto;margin-top:20px;" class="loader"></div>
+        <h3>Loading...</h3>
+    </div>
+    <div id="main" hidden class="container" style="margin-top:20px;">
+        <!-- Modal -->
+        <div class="modal fade" id="thankModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Welcome to YT-Link!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>You can use any of these links:</p>
+                        <ul class="list-group" id="createdLink">
+                        </ul>
+                        <p>Don't forget to follow us on social media for more updates:</p>
+                        <div style="width:70%;margin:auto;" class="row">
+                            <div style="text-align:center;" class="col-xs-3 col-sm-3">
+                                <img alt="twitterLogo" class="socialIcons" src="./Media/twitter.png"
+                                    onclick="window.location.href='https://twitter.com/ytlink_'" />
+                            </div>
+                            <div style="text-align:center;" class="col-xs-3 col-sm-3">
+                                <img alt="instagramLogo" class="socialIcons" src="./Media/instagram.png"
+                                    onclick="window.location.href='https://www.instagram.com/ytlink_'" />
+                            </div>
+                            <div style="text-align:center;" class="col-xs-3 col-sm-3">
+                                <img alt="facebookLogo" class="socialIcons" src="./Media/fb.png"
+                                    onclick="window.location.href='https://www.facebook.com/ytlink1/'" />
+                            </div>
+                            <div style="text-align:center;" class="col-xs-3 col-sm-3">
+                                <img alt="facebookLogo" class="socialIcons" src="./Media/patreon.png"
+                                    onclick="window.location.href='https://www.patreon.com/ytlink'" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-md-4 col-lg-4 right">
+                <div class="logo">
+                    <img alt="mainLogo" src="./Media/logo.png">
+                </div>
+                <div style="width:60%;margin:auto;margin-bottom:40px;" class="row">
+                    <div style="text-align:center;" class="col-xs-3 col-sm-3">
+                        <img alt="twitterLogo" class="socialIcons" src="./Media/twitter.png"
+                            onclick="window.location.href='https://twitter.com/ytlink_'" />
+                    </div>
+                    <div style="text-align:center;" class="col-xs-3 col-sm-3">
+                        <img alt="instagramLogo" class="socialIcons" src="./Media/instagram.png"
+                            onclick="window.location.href='https://www.instagram.com/ytlink_'" />
+                    </div>
+                    <div style="text-align:center;" class="col-xs-3 col-sm-3">
+                        <img alt="facebookLogo" class="socialIcons" src="./Media/fb.png"
+                            onclick="window.location.href='https://www.facebook.com/ytlink1/'" />
+                    </div>
+                    <div style="text-align:center;" class="col-xs-3 col-sm-3">
+                        <img alt="facebookLogo" class="socialIcons" src="./Media/patreon.png"
+                            onclick="window.location.href='https://www.patreon.com/ytlink'" />
+                    </div>
+                </div>
+                <div class="description">
+                    <!-- <div class="input-group newCode">
+                        <input id="ytlink" class="form-control" type='text' placeholder="Your Channel URL">
+                        <div class="input-group-btn">
+                            <button class="btn btn-danger loadChannel">Load</button>
+                        </div>
+                    </div> -->
+
+                    <div style="width:100%;text-align:center;margin-bottom:30px;" id="loginPart">
+                        <button onclick="loginWithGoogle()" class="btn btn-danger">Login with Google</button>
+                    </div>
+
+                    <div id="loadedChannel">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="numberOfPoints">
+                                Total Points
+                                <span
+                                    style='border:1px solid rgba(0,0,0,0.2);border-radius:5px;padding:5px;text-align:center;width:95%;display:block;'
+                                    id="nPoints"></span>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="numberOfCodes">
+                                Number of Codes
+                                <span
+                                    style='border:1px solid rgba(0,0,0,0.2);border-radius:5px;padding:5px;text-align:center;width:95%;display:block;'
+                                    id="nCodes"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="rateUs"
+                        style="background-color:rgba(0,0,0,0.1);width:100%;text-align:center;padding-top:20px;padding-bottom:10px;border-radius:5px;margin-bottom:20px;"
+                        hidden>
+                        <img style="resize:both;width:80%;border-radius:10px;margin-bottom:5px;"
+                            src='./Media/rateUs.gif'>
+                        <button class="btn btn-danger"> Give Feedback</button>
+                    </div>
+
+                    <p> The goal of
+                        <b>YT-Link</b> is for content creators on youtube to have a dedicated link that'll always
+                        redirect to
+                        their latest video. </p>
+                    <p> This can eliminate the problem of having to constantly update the URL for your most recent video
+                        on other
+                        social media platforms.</p>
+                    <p> The
+                        <b>YT-Link</b> is a short code defined by you to be linked to your youtube channel, with this
+                        code you
+                        and your followers can reach your last video by simply going to:
+                        <br>
+                        <b>yt-link.com/CODE</b>.</p>
+                    <p>Contact us at <b><a style="color:black;" href="mailto:info@yt-link.com">info@yt-link.com</a></b>
+                    </p>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <a href="./TOS/">Terms of Service</a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href="./PP/">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <!-- <div class="warning"> <font style="color:#b30000"><b>WARNING:</b> Due to a YouTube API error we will be redirecting to the channel instead of the latest video. Thank you for understanding.</font></div> -->
+                </div>
+            </div>
+            <div class="col-sm-8 col-md-8 col-lg-8">
+                <div class="menu">
+                    <div class="row legend">
+                        <!-- <div style="max-width:600px;" id="45374-28"><script src="//ads.themoneytizer.com/s/gen.js?type=28"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=45374&formatId=28"></script></div> -->
+                        <button class="btn btn-default activeBtn menuBtn" id="homeBtn">Home</button>
+                        <button class="btn btn-default menuBtn hidden" id="chatBtn">Chat</button>
+                        <button class="btn btn-default menuBtn" id="partnersBtn">Partners</button>
+                        <button class="btn btn-default menuBtn" id="extBtn">Extension</button>
+                        <button class="btn btn-default menuBtn" id="faqBtn">FAQ</button>
+                    </div>
+                </div>
+                <div id="home" class="pages">
+                    <!-- legend -->
+                    <div class="row legend">
+                        <div class="input-group">
+                            <input id="searchInput" class="form-control" type='text' placeholder="Channel Name or Code">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default searchChannel"> Search </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="topChannel">
+                    </div>
+                    <div id="channels">
+                    </div>
+                    <div id="pageBtnsDiv">
+                    </div>
+                </div>
+                <div hidden id="extDiv" class="pages">
+                    <div style="width:90%;margin:auto;padding-left:10px;" class="row">
+                        <h3>YTLink Chrome Extension</h3>
+                        <p> If you use Google Chrome as a web browser we have the perfect tool for you to keep up with
+                            your favorite channels.</p>
+                        <div class="row">
+                            <div calss="videoWrapper">
+                                <iframe style="resize:both;width:100%;height:200px;" src="https://www.youtube.com/embed/Agby41cWKgU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div style="margin-top:20px;margin-bottom:20px;width:100%;text-align:center;padding-top:10px;"
+                            class="downloadExt"><button
+                                onclick="window.location.href='https://chrome.google.com/webstore/detail/ytlink/doejjpejflaoklbclgimmgbkdpakogcb'"
+                                class="btn btn-danger">Download</button></div>
+                        <div class="row">
+                            <div style="text-align:center;" class="col-sm-4">
+                                <p><b>1 - Select channels</b></p>
+                                <img style="resize:both;width:70%;" src="./Media/step1.png">
+                            </div>
+                            <div style="text-align:center;" class="col-sm-4">
+                                <p><b>2 - Real-time notifications</b></p>
+                                <img style="resize:both;width:70%;" src="./Media/step2.png">
+                            </div>
+                            <div style="text-align:center;" class="col-sm-4">
+                                <p><b>3 - Discover our partners</b></p>
+                                <img style="resize:both;width:70%;" src="./Media/step3.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div hidden id="chatDiv" style="text-align:center;" class="pages">
+                    <iframe id="chatFrame" src="./Chat/"
+                        style="border:none;width:90%;margin:auto;border:1px solid rgba(0,0,0,0.1);border-radius:5px;"></iframe>
+                </div>
+                <div hidden id="faq" class="pages">
+                    <div class="faqDiv">
+                        <h3>Frequently Asked Questions </h3>
+                        <div class="faqEl">
+                            <h4>1 - How do I create a code?</h4>
+                            <p>All you have to do is login with your google account (the one associated to your youtube
+                                account) and then type the pretended CODE and your prefered e-mail address.
+                            </p>
+                        </div>
+                        <div class="faqEl">
+                            <h4>2 - What should my code look like?</h4>
+                            <p>We believe in short memorable codes so that it’s easier for your followers to remember,
+                                that being said the code can be anything you want, just keep in mind that if you use a
+                                very lengthy one it’s likely that people won’t be able to remember it.
+                            </p>
+                            <p>
+                                <b>The code can't have more than 10 characters.</b>
+                            </p>
+                        </div>
+                        <div class="faqEl">
+                            <h4>3 - Do I have to register?</h4>
+                            <p>Our platform does not require any type of registration since we believe in simplifying
+                                the experience as much as possible.
+                                The only thing you’ll need to do is login with your google account that's associated
+                                with your channel and then type the code you want to use and an e-mail address so that
+                                we have a way of contacting you.
+                            </p>
+                        </div>
+                        <div class="faqEl">
+                            <h4>4 - The code I want is already registered, what do I do?</h4>
+                            <p>The first thing we recommend is that you should try another code, maybe a variation of
+                                the one you initially wanted. If you absolutely want a specific code and it has already
+                                been taken you can contact us so we can see what we can do - maybe an arrangement
+                                between you and the user that has the code you want can be the solution.
+
+                                In the future we’ll have a way for you to contact the user with the code you want
+                                directly through our platform.
+                            </p>
+                        </div>
+                        <div class="faqEl">
+                            <h4>5 - Can I change my code?</h4>
+                            <p>Short answer is no, but if you really think you need to change it you can send us an
+                                email at info@yt-link.com explaining why you want to change it and maybe we can do it
+                                for you.</p>
+                        </div>
+                        <div class="faqEl">
+                            <h4>6 - I don't have any videos, where will my code redirect to?</h4>
+                            <p>We decided to have the link redirect to our website if there is no video to redirect to.
+                            </p>
+                        </div>
+                        <div class="faqEl">
+                            <h4>7 - What are the points and how do I get them?</h4>
+                            <p>Each code will have certain points that represent the amount of times people
+                                have opened the <b>YT-Link</b>.
+                            </p>
+                            <p> The user with the most points will be shown at the top of the page with a red
+                                background.</p>
+                        </div>
+                        <div class="faqEl">
+                            <h4>8 - What is a partner?</h4>
+                            <p>A <b>YT-Link</b> partner is a user of significance relevance in the platform. These users
+                                are usually high performers in the platform (high number of points) and have some
+                                special perks by entering our program.</p>
+                            <p> <b>Partner Perks </b>
+                                <ul>
+                                    <li>Presence on the YTLink extension</li>
+                                    <li>Personalized chat emotes</li>
+                                    <li>Their own chat on YTLink</li>
+                                    <li>Special placement on our platforms and social media</li>
+                                </ul>
+                            </p>
+                            <p> You can become a partner if we see that you have a big impact in our platform or by
+                                supporting us on <a href="https://patreon.com/ytlink"><b>patreon</b></a>.</p>
+                            <p>You can also send us a private message on our social media.</p>
+                        </div>
+                        <div class="faqEl">
+                            <h4>9 - What is the YTLink Chrome Extension?</h4>
+                            <p>If you use the Google Chrome browser to navigate the web we have a tool for you that will
+                                help you keep up to date with your favorite youtube channels.</p>
+                            <p>With the extension you can browse through our list of partners and select the ones you
+                                want to be notified about. After selecting your prefered channels you'll be notified in
+                                real-time everytime they post a new video.</p>
+                            <p>The extension doesn't require any type of registration.</p>
+                        </div>
+                        <div class="faqEl">
+                            <h4>10 - Why does the content creator I'm looking for doesn't appear on the extension?</h4>
+                            <p>Only YTLink partners are present on our extension, if you believe they would be a good
+                                addition as a partner try to make them know about our existence or send us an e-mail so
+                                we can try to reach out to them.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

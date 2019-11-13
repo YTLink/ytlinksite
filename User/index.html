@@ -1,0 +1,130 @@
+<html>
+
+<head>
+
+    <title> YT-Link </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The goal of YT-Link is for content creators on youtube to have a dedicated link that'll always redirect to their latest video.">
+    <meta name="keywords" content="youtube,singlelink,youtube link,short url,small url,small link,lastvideo,latest video,recent video">
+
+    <!-- Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47135999-8"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-47135999-8');
+    </script>
+
+    
+    <!-- local scripts -->
+    <script type="text/javascript" src="../JS/user.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../Media/favicon.png">
+    
+    <!-- remote scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- local style -->
+    <style>
+    .textContent {
+        vertical-align:center;
+    }
+    .logo {
+        text-align: center;
+    }
+    .logo img {
+        resize: both;
+        height: 100px;
+    }
+    .description {
+        width: 90%;
+        margin-right:auto;
+        margin-left:auto;
+    }
+    .legend {
+        margin-top:10px;
+        margin-bottom:10px;
+        font-size:15px;
+        margin-left:auto;
+        margin-right:auto;
+        width:90%;
+    }
+    .right {
+        margin-bottom:30px;
+    }
+    .input-group {
+        margin-bottom:30px;
+    }
+    </style>
+
+</head>
+
+<body>
+    <div id="main" class="container" style="margin-top:20px;">
+        <div class="row">
+            <div class="col-sm-4 col-md-4 col-lg-4 right">
+                <div class="logo">
+                    <a href="../">
+                        <img src="../Media/logo.png"/>
+                    </a>
+                </div>
+                <div class="description">
+                    <div class="input-group">
+                        <input id="ytlink" class="form-control" type='text' placeholder="Your Channel URL">
+                        <div class="input-group-btn">
+                            <button class="btn btn-danger loadChannel">Load</button>
+                        </div>
+                    </div>
+                    <div id="loadedChannel">
+
+                    </div>
+                    <p> The goal of <b>YT-Link</b> is for content creators on youtube to have a dedicated link that'll always redirect to their latest video. </p>
+                    <p> This can eliminate the problem of having to constantly update the URL for your most recent video on other social media platforms.</p>
+                    <p> The <b>YT-Link</b> is a short code defined by you to be linked to your youtube channel, with this code you and your followers can reach your last video by simply going to: <br> <b>yt-link.com/CODE</b>.</p>
+                </div>
+            </div>
+            <div class="col-sm-8 col-md-8 col-lg-8">
+                <!-- legend -->
+                <div class="row legend">
+                    <div class="input-group">
+                            <input id="searchInput" class="form-control" type='text' placeholder="Channel Name">
+                            <div class="input-group-btn">
+                                <button class="btn btn-danger searchChannel">Find</button>
+                            </div>
+                        </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        Picture
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        Channel
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        Subs
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        Code
+                    </div>
+                </div>
+                <div id="channels">
+
+                </div>
+                <div class="row legend">
+                    <div class="col-lg-12">
+                        Contact us at<b> info@yt-link.com </b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

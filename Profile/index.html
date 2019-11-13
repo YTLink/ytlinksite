@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title> YT-Link </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="The goal of YT-Link is for content creators on youtube to have a dedicated link that'll always redirect to their latest video.">
+    <meta name="keywords"
+        content="youtube,singlelink,youtube link,short url,small url,small link,lastvideo,latest video,recent video">
+
+    <!-- Social media tags -->
+    <meta property="og:title" content="YT-Link">
+    <meta property="og:description" content="Unique link to point yo your last video">
+    <meta property="og:image" content="https://yt-link.com/Media/socialLogo.jpg">
+    <meta property="og:url" content="https://yt-link.com/">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./Media/favicon.png">
+
+    <!-- Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47135999-8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-47135999-8');
+    </script>
+
+
+    <!-- local scripts -->
+    <script type="text/javascript" src="../JS/profile.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--Footer AD -->
+    <div id="45374-6">
+        <script src="//ads.themoneytizer.com/s/gen.js?type=6"></script>
+        <script src="//ads.themoneytizer.com/s/requestform.js?siteId=45374&formatId=6"></script>
+    </div>
+
+    <!-- AdSense -->
+    <script data-ad-client="ca-pub-1282983709440222" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <!-- remote scripts -->
+    <script src="./JS/jquery.min.js"></script>
+    <script src="./JS/bootstrap.min.js"></script>
+
+    <!-- ads -->
+    <script type="text/javascript" src="./JS/ads.js"></script>
+
+    <!-- local style -->
+    <link rel="stylesheet" type="text/css" href="./Style/main.css">
+
+</head>
+
+<body>
+    <div id="openingYourVideo">
+        <div style="margin:auto;margin-top:20px;" class="loader"></div>
+        <h3>Loading...</h3>
+    </div>
+    <div id="main" hidden class="container" style="margin-top:20px;">
+        <!-- Modal -->
+        <div class="modal fade" id="thankModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Welcome to YT-Link!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>You can use any of these links:</p>
+                        <ul class="list-group" id="createdLink">
+                        </ul>
+                        <p>Don't forget to follow us on social media for more updates:</p>
+                        <div style="width:70%;margin:auto;" class="row">
+                            <div style="text-align:center;" class="col-xs-3 col-sm-3">
+                                <img alt="twitterLogo" class="socialIcons" src="./Media/twitter.png"
+                                    onclick="window.location.href='https://twitter.com/ytlink_'" />
+                            </div>
+                            <div style="text-align:center;" class="col-xs-3 col-sm-3">
+                                <img alt="instagramLogo" class="socialIcons" src="./Media/instagram.png"
+                                    onclick="window.location.href='https://www.instagram.com/ytlink_'" />
+                            </div>
+                            <div style="text-align:center;" class="col-xs-3 col-sm-3">
+                                <img alt="facebookLogo" class="socialIcons" src="./Media/fb.png"
+                                    onclick="window.location.href='https://www.facebook.com/ytlink1/'" />
+                            </div>
+                            <div style="text-align:center;" class="col-xs-3 col-sm-3">
+                                <img alt="facebookLogo" class="socialIcons" src="./Media/patreon.png"
+                                    onclick="window.location.href='https://www.patreon.com/ytlink'" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-md-4 col-lg-4 right">
+                <div class="logo">
+                    <img alt="mainLogo" src="./Media/logo.png">
+                </div>
+                <div style="width:60%;margin:auto;margin-bottom:40px;" class="row">
+                    <div style="text-align:center;" class="col-xs-3 col-sm-3">
+                        <img alt="twitterLogo" class="socialIcons" src="./Media/twitter.png"
+                            onclick="window.location.href='https://twitter.com/ytlink_'" />
+                    </div>
+                    <div style="text-align:center;" class="col-xs-3 col-sm-3">
+                        <img alt="instagramLogo" class="socialIcons" src="./Media/instagram.png"
+                            onclick="window.location.href='https://www.instagram.com/ytlink_'" />
+                    </div>
+                    <div style="text-align:center;" class="col-xs-3 col-sm-3">
+                        <img alt="facebookLogo" class="socialIcons" src="./Media/fb.png"
+                            onclick="window.location.href='https://www.facebook.com/ytlink1/'" />
+                    </div>
+                    <div style="text-align:center;" class="col-xs-3 col-sm-3">
+                        <img alt="facebookLogo" class="socialIcons" src="./Media/patreon.png"
+                            onclick="window.location.href='https://www.patreon.com/ytlink'" />
+                    </div>
+                </div>
+                <div class="description">
+                    <!-- <div class="input-group newCode">
+                        <input id="ytlink" class="form-control" type='text' placeholder="Your Channel URL">
+                        <div class="input-group-btn">
+                            <button class="btn btn-danger loadChannel">Load</button>
+                        </div>
+                    </div> -->
+
+                    <div style="width:100%;text-align:center;margin-bottom:30px;" id="loginPart">
+                        <button onclick="loginWithGoogle()" class="btn btn-danger">Login with Google</button>
+                    </div>
+
+                    <div id="loadedChannel">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="numberOfPoints">
+                                Total Points
+                                <span
+                                    style='border:1px solid rgba(0,0,0,0.2);border-radius:5px;padding:5px;text-align:center;width:95%;display:block;'
+                                    id="nPoints"></span>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="numberOfCodes">
+                                Number of Codes
+                                <span
+                                    style='border:1px solid rgba(0,0,0,0.2);border-radius:5px;padding:5px;text-align:center;width:95%;display:block;'
+                                    id="nCodes"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="rateUs"
+                        style="background-color:rgba(0,0,0,0.1);width:100%;text-align:center;padding-top:20px;padding-bottom:10px;border-radius:5px;margin-bottom:20px;"
+                        hidden>
+                        <img style="resize:both;width:80%;border-radius:10px;margin-bottom:5px;"
+                            src='./Media/rateUs.gif'>
+                        <button class="btn btn-danger"> Give Feedback</button>
+                    </div>
+
+                    <p> The goal of
+                        <b>YT-Link</b> is for content creators on youtube to have a dedicated link that'll always
+                        redirect to
+                        their latest video. </p>
+                    <p> This can eliminate the problem of having to constantly update the URL for your most recent video
+                        on other
+                        social media platforms.</p>
+                    <p> The
+                        <b>YT-Link</b> is a short code defined by you to be linked to your youtube channel, with this
+                        code you
+                        and your followers can reach your last video by simply going to:
+                        <br>
+                        <b>yt-link.com/CODE</b>.</p>
+                    <p>Contact us at <b><a style="color:black;" href="mailto:info@yt-link.com">info@yt-link.com</a></b>
+                    </p>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <a href="../TOS/">Terms of Service</a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href="../PP/">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <!-- <div class="warning"> <font style="color:#b30000"><b>WARNING:</b> Due to a YouTube API error we will be redirecting to the channel instead of the latest video. Thank you for understanding.</font></div> -->
+                </div>
+            </div>
+            <div class="col-sm-8 col-md-8 col-lg-8">
+                <div id="profile" class="pages">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
