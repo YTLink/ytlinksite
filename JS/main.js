@@ -1,4 +1,4 @@
-var apiKey = "AIzaSyASvwWL1-yUgQT9r10DzoV1iph2TYP7S3E";
+var apiKey = "{API_KEY}";
 
 window.onload = function () {
     if (window.location.href.indexOf("#") > -1 && window.location.href.split("#")[1].indexOf("access_token") > -1) {
