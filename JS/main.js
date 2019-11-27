@@ -1,4 +1,4 @@
-var apiKey = "{API_KEY}";
+var apiKey = "{API KEY}";
 
 window.onload = function () {
     if (window.location.href.indexOf("#") > -1 && window.location.href.split("#")[1].indexOf("access_token") > -1) {
@@ -23,7 +23,7 @@ window.onload = function () {
 
 //main method (normal webpage)
 function renderMainPage() {
-    
+
     loadCurrentUserName();
 
     $("#openingYourVideo").hide();
@@ -64,13 +64,6 @@ function renderMainPage() {
         $(event.target).addClass("activeBtn");
         window.scrollTo(0, document.body.scrollHeight);
     });
-
-    /* $("#aboutBtn").click(function () {
-        $(".pages").hide();
-        $("#about").show();
-        $(".menuBtn").removeClass("activeBtn");
-        $(event.target).addClass("activeBtn");
-    }); */
 
     $("#homeBtn").click(function () {
         $(".pages").hide();
@@ -545,11 +538,22 @@ function loadRegistredMembers(event) {
 
                             channelCodes[cKey] = cCode;
                             channelPoints[cKey] = cPoints;
+
+                            //mark if it's from the partner program
                             if (maxChannels[i].key.indexOf("[PARTNER]") > -1) {
                                 channelPartner[cKey] = true;
                             } else {
                                 channelPartner[cKey] = false;
                             }
+
+                            //mark if it's a picked channel
+                            if (maxChannels[i].key.indexOf("[PICK]") > -1) {
+                                channelPick[cKey] = true;
+                                channelPoints[cKey] = 0;
+                            } else {
+                                channelPick[cKey] = false;
+                            }
+
                             channelsKey += "," + cKey;
                         }
                     } else {
@@ -589,6 +593,7 @@ function getChannelPoints(channel) {
 var channelCodes = {};
 var channelPoints = {};
 var channelPartner = {};
+var channelPick = {};
 
 //function to get the actual youtube info of the channel
 function getChannelInfo(channelKey, k) {
@@ -603,7 +608,8 @@ function getChannelInfo(channelKey, k) {
                 var code = channelCodes[element.id];
                 var points = channelPoints[element.id];
                 var isPartner = channelPartner[element.id];
-                renderChannelInfo(element, code, points, isPartner, k);
+                var isPick = channelPick[element.id];
+                renderChannelInfo(element, code, points, isPartner, isPick, k);
             });
         }
     };
@@ -631,7 +637,7 @@ function getChannelInternApi(channelKey, code, points) {
 }
 
 //method to list the youtube channels
-function renderChannelInfo(channelModel, code, points, isPartner, k) {
+function renderChannelInfo(channelModel, code, points, isPartner, isPick, k) {
 
     var profilePicture = channelModel.snippet.thumbnails.default.url,
         channelName = channelModel.snippet.title,
@@ -646,7 +652,8 @@ function renderChannelInfo(channelModel, code, points, isPartner, k) {
             "data-name": channelName.toUpperCase(),
             "data-code": code,
             "div-index": k,
-            "isPartner": isPartner
+            "isPartner": isPartner,
+            "isPick": isPick
         }).appendTo($("#topChannel"));
     } else {
         $("[channelIndex='" + getIndexByCode(code) + "']").html("");
@@ -656,7 +663,8 @@ function renderChannelInfo(channelModel, code, points, isPartner, k) {
             "data-name": channelName.toUpperCase(),
             "data-code": code,
             "div-index": k,
-            "isPartner": isPartner
+            "isPartner": isPartner,
+            "isPick": isPick
         }).appendTo($("[channelIndex='" + getIndexByCode(code) + "']"));
 
         if (k >= 1) {
@@ -687,22 +695,31 @@ function renderChannelInfo(channelModel, code, points, isPartner, k) {
             html: '<a href="./Chat/#' + code.toUpperCase() + '"><span class="glyphicon glyphicon-comment"></span></a>',
             style: 'position:relative;display:inline-block;float:right;'
         }));
+    } else if (isPick) {
+        title.append(jQuery("<span>", {
+            html: "<span class='glyphicon glyphicon-star'></span>",
+            style: "display:inline-block;color:white;font-size:9px;margin-left:5px;height:15px;width:15px;text-align:center;border-radius:100%;background-color:#6699ff;position:relative;bottom:3px;"
+        }));
     }
 
     var rightRow = jQuery("<div>", {
         class: "row",
     }).appendTo(right);
 
-    //subs
-    jQuery("<div>", {
-        class: "col-xs-12 col-sm-4 col-md-4 col-lg-4",
-        html: "Points <b>" + points + "</b>"
-    }).appendTo(rightRow);
+    if (!isPick) {
 
-    jQuery("<div>", {
-        class: "col-xs-12 col-sm-4 col-md-4 col-lg-4",
-        html: "Subs <b>" + subCounter + "</b>"
-    }).appendTo(rightRow);
+        //subs
+        jQuery("<div>", {
+            class: "col-xs-12 col-sm-4 col-md-4 col-lg-4",
+            html: "Points <b>" + points + "</b>"
+        }).appendTo(rightRow);
+
+        jQuery("<div>", {
+            class: "col-xs-12 col-sm-4 col-md-4 col-lg-4",
+            html: "Subs <b>" + subCounter + "</b>"
+        }).appendTo(rightRow);
+
+    }
 
     jQuery("<div>", {
         class: "col-xs-12 col-sm-12 col-md-12 col-lg-12 code",
