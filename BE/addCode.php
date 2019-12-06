@@ -1,8 +1,14 @@
 <?php 
     if(isset($_GET['key']) && isset($_GET['channelKey']) && isset($_GET['email'])) {
         $stringFile = file_get_contents("../DB/channels.json");
-        if(validateKey($_GET['key']) && validateEmail($_GET['email'])) {
-            $newInput = ',"'.$_GET['key'].'": "'.$_GET['channelKey'].'[email]'.$_GET['email'].'"}';
+
+        $extra = "";
+        if(isset($_GET['extra'])) {
+            $extra = $_GET['extra'];
+        }
+
+        if(validateKey($_GET['key'], $stringFile) && validateEmail($_GET['email'])) {
+            $newInput = ',"'.$_GET['key'].'": "'.$_GET['channelKey'].'[email]'.$_GET['email'].'[points]0'.$extra.'"}';
             $stringFile = str_replace("}",$newInput, $stringFile);
 
             $myfile = fopen("../DB/channels.json", "w") or die("Unable to open file!");

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <!-- Admin title -->
+    <title> YTLink Admin </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="The goal of YT-Link is for content creators on youtube to have a dedicated link that'll always redirect to their latest video.">
+    <meta name="keywords"
+        content="youtube,singlelink,youtube link,short url,small url,small link,lastvideo,latest video,recent video">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../Media/favicon.png">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- remote scripts -->
+    <script src="../JS/jquery.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+
+    <!-- Local script -->
+    <script type="text/javascript">
+        //function to call the BE service to add a new code
+        function addNewCode() {
+            var key, email, channelId;
+            key = $("#key").val();
+            email = $("#email").val();
+            channelId = $("#channelId").val();
+            var url = "../BE/addCode.php?key=" + key.toUpperCase() + "&channelKey=" + channelId + "&email=" +
+            email + "&extra=[PICK]";
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                }
+            };
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div style="width:100%;text-align:center;" class="logo">
+            <img style="resize:both;height:100px;" src="../Media/mainLogo.png">
+        </div>
+        <div style="text-align:center;" class="row">
+            <div style="display:inline-block;float:none;margin:auto;" class="col-xs-12 col-sm-6">
+                <p>Add New Channel </p>
+                <p><input id="key" class="form-control" type="text" placeholder="Code"></p>
+                <p><input id="channelId" class="form-control" type="text" placeholder="Channel ID"></p>
+                <p><input id="email" class="form-control" type="text" placeholder="E-Mail"></p>
+                <p><input class="form-control" onclick="addNewCode()" type="submit" value="Add New Channel"></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

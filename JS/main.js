@@ -1,4 +1,4 @@
-var apiKey = "{API KEY}";
+var apiKey = "AIzaSyASvwWL1-yUgQT9r10DzoV1iph2TYP7S3E";
 
 window.onload = function () {
     if (window.location.href.indexOf("#") > -1 && window.location.href.split("#")[1].indexOf("access_token") > -1) {
@@ -249,14 +249,14 @@ function loadChannel(token) {
 //method to check if channel has given review
 function hasGivenReview(code) {
     var xhttp = new XMLHttpRequest();
-    var url = "https://vantta.com/05/API/REST/givenRevById.php?token=2_YTLink&uniqueID=" + code;
+    var url = "https://vantta.com/05/REST/givenRevById.php?token=28_YTLink&uniqueID=" + code;
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             if (this.responseText === "true") {
                 $("#rateUs").show();
                 $("#rateUs").find("button").click(function () {
-                    window.location.href = "https://vantta.com/05/API/OneSwipe/token.php?token=2_YTLink&uniqueID=" + code + "&redirectURL=https://yt-link.com/BE/reviewPrize.php?code=" + code;
+                    window.location.href = "https://vantta.com/05/OneSwipe/token.php?token=28_YTLink&uniqueID=" + code + "&redirectURL=https://yt-link.com/BE/reviewPrize.php?code=" + code;
                 });
             } else {
                 $("#rateUs").hide();

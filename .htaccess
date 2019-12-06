@@ -1,5 +1,6 @@
 RewriteEngine On
 
+RewriteCond %{REQUEST_URI} !/Admin/
 RewriteCond %{REQUEST_URI} !/DB/
 RewriteCond %{REQUEST_URI} !/BE/
 RewriteCond %{REQUEST_URI} !/JS/

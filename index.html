@@ -38,7 +38,7 @@
 
 
     <!-- local scripts -->
-    <script type="text/javascript" src="./JS/main.js"></script>
+    <script type="text/javascript" src="./JS/main.js?v=3"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -235,15 +235,13 @@
                         <h3>YTLink Chrome Extension</h3>
                         <p> If you use Google Chrome as a web browser we have the perfect tool for you to keep up with
                             your favorite channels.</p>
-                        <div class="row">
-                            <div calss="videoWrapper">
-                                <iframe style="resize:both;width:100%;height:200px;" src="https://www.youtube.com/embed/Agby41cWKgU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div style="width:95%;margin:auto;margin-bottom:20px;" class="row">
+                            <div class="videoWrapper">
+                                <iframe src="https://www.youtube.com/embed/Agby41cWKgU" frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
                             </div>
                         </div>
-                        <div style="margin-top:20px;margin-bottom:20px;width:100%;text-align:center;padding-top:10px;"
-                            class="downloadExt"><button
-                                onclick="window.location.href='https://chrome.google.com/webstore/detail/ytlink/doejjpejflaoklbclgimmgbkdpakogcb'"
-                                class="btn btn-danger">Download</button></div>
                         <div class="row">
                             <div style="text-align:center;" class="col-sm-4">
                                 <p><b>1 - Select channels</b></p>
@@ -258,6 +256,10 @@
                                 <img style="resize:both;width:70%;" src="./Media/step3.png">
                             </div>
                         </div>
+                        <div style="margin-top:20px;margin-bottom:20px;width:100%;text-align:center;padding-top:10px;"
+                            class="downloadExt"><button
+                                onclick="window.location.href='https://chrome.google.com/webstore/detail/ytlink/doejjpejflaoklbclgimmgbkdpakogcb'"
+                                class="btn btn-danger">Download</button></div>
                     </div>
                 </div>
                 <div hidden id="chatDiv" style="text-align:center;" class="pages">
@@ -353,6 +355,15 @@
                             <p>Only YTLink partners are present on our extension, if you believe they would be a good
                                 addition as a partner try to make them know about our existence or send us an e-mail so
                                 we can try to reach out to them.</p>
+                        </div>
+                        <div class="faqEl">
+                            <h4>11 - Why do some channels have a star icon on the name?</h4>
+                            <p>Those channels with a star are channels that were not created by the owner of the channel
+                                but were added to our platform by the <b>YTLink team</b>. </p> 
+                            <p>Usually they belong to larger channels which we
+                                believe are a good addition to our extension.</p> 
+                            <p>You'll also notice that those channels do
+                                not have the number of subscribers or number of points</p>
                         </div>
                     </div>
                 </div>
